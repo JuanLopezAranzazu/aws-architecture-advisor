@@ -17,3 +17,11 @@ python -m scripts.ingest    # indexa data/docs en pgvector
 uvicorn app.main:app --reload
 ```
 API en http://localhost:8000/docs
+
+### 3. Frontend
+```bash
+cd frontend
+pnpm install
+pnpm dev
+```
+App en http://localhost:5173 (el proxy de Vite envía `/api` al backend).
