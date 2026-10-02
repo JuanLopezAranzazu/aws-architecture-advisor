@@ -1,6 +1,9 @@
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
+from .schemas import ArchitectRequest
+from .pipeline import run
 
 app = FastAPI(title="AWS Architect Assistant")
 app.add_middleware(
@@ -9,6 +12,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.post("/api/architect")
+def architect(req: ArchitectRequest):
+    try:
+        return run(req)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"No se pudo generar la arquitectura: {e}")
+
 
 @app.get("/health")
 def health():
