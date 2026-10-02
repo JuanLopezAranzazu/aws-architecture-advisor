@@ -18,7 +18,7 @@ app.add_middleware(
 def architect(req: ArchitectRequest):
     try:
         return run(req)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001
         raise HTTPException(status_code=502, detail=f"No se pudo generar la arquitectura: {e}")
 
 

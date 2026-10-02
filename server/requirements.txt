@@ -1,6 +1,6 @@
 fastapi
 uvicorn[standard]
-openai
+groq
 python-dotenv
 sentence-transformers
 psycopg[binary]
