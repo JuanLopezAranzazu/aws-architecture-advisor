@@ -9,8 +9,16 @@ export interface ArchitectRequest {
   team_level: Level;
 }
 
-export interface NodeT { id: string; service: string; role: string }
-export interface EdgeT { source: string; target: string; label: string }
+export interface NodeT {
+  id: string;
+  service: string;
+  role: string;
+}
+export interface EdgeT {
+  source: string;
+  target: string;
+  label: string;
+}
 export interface ServiceDetail {
   name: string;
   what_it_is: string;

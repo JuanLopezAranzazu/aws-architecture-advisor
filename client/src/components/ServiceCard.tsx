@@ -39,7 +39,12 @@ function Block({
 
 export default function ServiceCard({ s }: { s: ServiceDetail }) {
   return (
-    <Box borderWidth="1px" borderRadius="lg" p={5} bg="bg.panel">
+    <Box
+      borderWidth="1px"
+      borderRadius="lg"
+      p={{ base: 4, md: 5 }}
+      bg="bg.panel"
+    >
       <Stack gap={4}>
         <Flex align="center" gap={3}>
           <Flex

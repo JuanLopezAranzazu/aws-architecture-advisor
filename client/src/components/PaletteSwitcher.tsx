@@ -21,8 +21,8 @@ export default function PaletteSwitcher({ value, onChange }: Props) {
           aria-label={`Paleta ${p.label}`}
           aria-pressed={value === id}
           onClick={() => onChange(id)}
-          w="18px"
-          h="18px"
+          w={{ base: "26px", md: "18px" }}
+          h={{ base: "26px", md: "18px" }}
           borderRadius="full"
           cursor="pointer"
           style={{ background: p.scale["500"] }}

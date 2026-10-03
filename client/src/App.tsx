@@ -36,7 +36,7 @@ function SectionTitle({
       <Icon color="brand.fg">
         <Ico size={22} />
       </Icon>
-      <Heading size="lg">{children}</Heading>
+      <Heading size={{ base: "md", md: "lg" }}>{children}</Heading>
     </HStack>
   );
 }
@@ -60,12 +60,18 @@ export default function App() {
   }
 
   return (
-    <Container maxW="4xl" py={8}>
+    <Container maxW="4xl" px={{ base: 4, md: 6 }} py={{ base: 5, md: 8 }}>
       <Stack gap={6}>
-        <Flex justify="space-between" align="center" wrap="wrap" gap={3}>
+        <Flex
+          justify="space-between"
+          align={{ base: "flex-start", sm: "center" }}
+          direction={{ base: "column", sm: "row" }}
+          gap={3}
+        >
           <HStack gap={3}>
             <Flex
               boxSize="44px"
+              flexShrink={0}
               align="center"
               justify="center"
               borderRadius="lg"
@@ -75,7 +81,9 @@ export default function App() {
               <Cloud size={24} />
             </Flex>
             <Box>
-              <Heading size="xl">AWS Architect Assistant</Heading>
+              <Heading size={{ base: "lg", md: "xl" }}>
+                AWS Architect Assistant
+              </Heading>
               <Text color="fg.muted" fontSize="sm">
                 Convierte la idea de tu proyecto en una arquitectura en AWS.
               </Text>
@@ -129,7 +137,7 @@ export default function App() {
                     bg="bg.panel"
                   >
                     <ServiceIcon name={n.service} size={18} />
-                    <Text fontSize="sm">
+                    <Text fontSize="sm" overflowWrap="anywhere">
                       <b>{n.service}:</b> {n.role}
                     </Text>
                   </HStack>

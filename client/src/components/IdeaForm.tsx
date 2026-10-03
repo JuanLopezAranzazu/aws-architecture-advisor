@@ -94,6 +94,8 @@ export default function IdeaForm({ loading, onSubmit }: Props) {
         </SimpleGrid>
         <Button
           colorPalette="brand"
+          w={{ base: "full", md: "auto" }}
+          alignSelf={{ md: "flex-end" }}
           loading={loading}
           disabled={idea.trim().length < 10}
           onClick={() =>
